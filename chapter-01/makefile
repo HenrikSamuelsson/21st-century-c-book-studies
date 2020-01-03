@@ -1,7 +1,13 @@
-P= program_name
-OBJECTS=
+CC     = gcc
 CFLAGS = -g -Wall -O3
-LDLIBS=
-CC=c99
+RM     = rm -f
 
-$(P): $(OBJECTS)
+default: all
+
+all: Hello
+
+Hello: hello.c
+	$(CC) $(CLFAGS) -o Hello hello.c
+
+clean veryclean:
+	$(RM) Hello
